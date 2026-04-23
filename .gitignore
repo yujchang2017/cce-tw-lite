@@ -1,0 +1,31 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Next.js build output
+web/.next/
+web/out/
+web/build.log
+web/next-env.d.ts
+web/*.tsbuildinfo
+
+# Local env (NEVER commit — contains Form URL/entry IDs that should be GitHub Variables)
+.env
+.env.local
+.env*.local
+web/.env
+web/.env.local
+web/.env*.local
+
+# Build pipeline cache
+web/data/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
