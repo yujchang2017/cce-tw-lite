@@ -1,14 +1,15 @@
 import type { NextConfig } from "next";
 
+// GitHub Pages project site 部署在 /<repo>/ 子路徑,需要 basePath
+// 綁定 custom domain (community.cce.tw) 後,把 BASE_PATH 設空字串(或在 workflow 取消設定)即可
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/cce-tw-lite";
+
 const nextConfig: NextConfig = {
-  // 靜態匯出 (GitHub Pages 用)
   output: "export",
-  // GitHub Pages 用 trailing slash 比較不會 404
   trailingSlash: true,
-  // 自訂域名 community.cce.tw 不需要 basePath;若先用 yujchang2017.github.io/community-cce-tw 需開啟下行
-  // basePath: "/community-cce-tw",
+  basePath,
+  assetPrefix: basePath,
   images: {
-    // 靜態匯出不能用 next/image optimizer
     unoptimized: true,
   },
 };
