@@ -50,6 +50,8 @@ jobs:
       - name: Build Next.js (static export)
         run: npm run build
         env:
+          # 有 custom domain 就不要 basePath,沒設才用 /<repo>/ 路徑
+          NEXT_PUBLIC_BASE_PATH: ${{ vars.CUSTOM_DOMAIN != '' && '' || '/cce-tw-lite' }}
           NEXT_PUBLIC_FORM_URL: ${{ vars.NEXT_PUBLIC_FORM_URL }}
           NEXT_PUBLIC_FORM_ENTRY_KEY_ID: ${{ vars.NEXT_PUBLIC_FORM_ENTRY_KEY_ID }}
           NEXT_PUBLIC_DISCUSSIONS_URL: ${{ vars.NEXT_PUBLIC_DISCUSSIONS_URL }}
