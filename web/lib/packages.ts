@@ -65,7 +65,10 @@ function toSummary(entry: IndexEntry): PackageSummary {
   };
 }
 
-const _allPackages: PackageSummary[] = (packagesIndex as IndexFile).packages.map(toSummary);
+const _allPackages: PackageSummary[] = (packagesIndex as IndexFile).packages
+  .map(toSummary)
+  // 暫時隱藏高中 (V) 階段 — 待教案完善後再開放
+  .filter((p) => p.level !== "V");
 
 export function getAllPackages(): PackageSummary[] {
   return _allPackages;

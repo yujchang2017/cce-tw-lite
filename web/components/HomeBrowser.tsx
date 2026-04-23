@@ -29,7 +29,7 @@ const LEVEL_OPTIONS: { value: Level | 'all'; label: string }[] = [
   { value: 'II', label: 'Level II · 幼兒園低年級' },
   { value: 'III', label: 'Level III · 國小中高' },
   { value: 'IV', label: 'Level IV · 國中' },
-  { value: 'V', label: 'Level V · 高中' },
+  // { value: 'V', label: 'Level V · 高中' }, // 暫時隱藏,待教案完善後再開放
 ];
 
 const THEME_OPTIONS: { value: number | 'all'; label: string }[] = [
